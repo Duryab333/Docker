@@ -61,8 +61,9 @@ For Ubuntu (like an EC2 instance):
 ```
 sudo apt update
 sudo apt install docker.io -y
-Start Docker and add your user to the Docker group:
 ```
+
+Start Docker and add your user to the Docker group:
 
 ```
 sudo systemctl start docker
