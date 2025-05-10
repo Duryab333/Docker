@@ -105,3 +105,23 @@ Push to Docker Hub:
 ```
 docker push yourdockerhub/my-first-image
 ```
+## Optimizing Docker Builds with Caching 
+Docker uses a layered caching mechanism to speed up builds by reusing unchanged instructions from previous builds. Each instruction in a Dockerfile creates a layer, and Docker checks whether it can reuse existing layers to avoid redundant work.
+
+Key Concepts
+✅ Layered Builds – Each instruction forms a layer, improving efficiency.
+
+✅ Cache Reuse – Unchanged layers are reused, reducing build time. 
+
+✅ Cache Invalidation – Changes to RUN, COPY, or ADD instructions invalidate the cache. 
+
+✅ Efficient Builds – Minimizing unnecessary changes ensures faster builds.
+
+### Best Practices
+-    Place less frequently changing instructions first to maximize cache usage.
+
+-    Avoid modifying RUN commands unless necessary.
+
+-    Minimize changes to copied files to prevent unnecessary cache invalidation.
+
+By following these practices, you can speed up Docker builds and reduce resource consumption! 🚀
