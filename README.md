@@ -82,14 +82,14 @@ Clone the repo and go to the examples folder:
 
 ```
 git clone https://github.com/iam-veeramalla/Docker-Zero-to-Hero
-cd examples
+cd Docker-Zero-to-Hero/examples/first-docker-file
 ```
 Login to Docker Hub:
 
 ```
 docker login
 ```
-Build your first image (replace yourdockerhub):
+Build your first image (replace yourdockerhub with your username):
 
 ```
 docker build -t yourdockerhub/my-first-image:latest .
