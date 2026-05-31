@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duryab Portfolio | DevOps Engineer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #07111f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, #00ffd5 0%, transparent 28%),
+        radial-gradient(circle at bottom right, #7c3cff 0%, transparent 30%),
+        linear-gradient(135deg, #07111f, #111827);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 30px;
+      padding: 45px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #00ffd5;
+    }
+
+    nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00ffd5;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(0, 255, 213, 0.12);
+      color: #00ffd5;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(0, 255, 213, 0.3);
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #00ffd5, #9b5cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      color: #94a3b8;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 620px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: linear-gradient(90deg, #00ffd5, #7c3cff);
+      color: #07111f;
+    }
+
+    .secondary {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0, 255, 213, 0.25);
+    }
+
+    .profile-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .avatar {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      margin: auto;
+      background: linear-gradient(135deg, #00ffd5, #7c3cff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      font-weight: 900;
+      color: #07111f;
+      box-shadow: 0 0 45px rgba(0, 255, 213, 0.35);
+      margin-bottom: 25px;
+    }
+
+    .profile-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .profile-box p {
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .skills {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-6px);
+      background: rgba(0, 255, 213, 0.1);
+    }
+
+    .skill h3 {
+      color: #00ffd5;
+      margin-bottom: 8px;
+    }
+
+    .skill p {
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer {
+      margin-top: 45px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 50px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .skills {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .card {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar {
+        width: 150px;
+        height: 150px;
+        font-size: 55px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="card">
+      <nav>
+        <div class="logo">Duryab.dev</div>
+        <div>
+          <a href="#">Home</a>
+          <a href="#">Skills</a>
+          <a href="#">Contact</a>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div>
+          <div class="badge">DevOps Engineer Portfolio</div>
+          <h1>Hello, I’m <span>Duryab</span></h1>
+          <p class="subtitle">Building reliable, scalable, and automated cloud infrastructure.</p>
+          <p class="description">
+            I am a DevOps Engineer passionate about cloud platforms, CI/CD pipelines,
+            automation, containers, monitoring, and secure infrastructure. I help teams
+            deploy faster, scale smarter, and operate with confidence.
+          </p>
+
+          <div class="buttons">
+            <a href="mailto:duryab@example.com" class="btn primary">Contact Me</a>
+            <a href="#" class="btn secondary">View Projects</a>
+          </div>
+        </div>
+
+        <div class="profile-box">
+          <div class="avatar">D</div>
+          <h2>Duryab Portfolio</h2>
+          <p>DevOps Engineer focused on automation, cloud, Docker, Kubernetes, Linux, and CI/CD.</p>
+        </div>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <h3>Cloud</h3>
+          <p>AWS, Azure, scalable deployments, and infrastructure management.</p>
+        </div>
+        <div class="skill">
+          <h3>CI/CD</h3>
+          <p>Automated build, test, and deployment pipelines.</p>
+        </div>
+        <div class="skill">
+          <h3>Containers</h3>
+          <p>Docker, Kubernetes, orchestration, and microservices.</p>
+        </div>
+        <div class="skill">
+          <h3>Automation</h3>
+          <p>Terraform, Bash scripting, Linux servers, and monitoring.</p>
+        </div>
+      </div>
+
+      <footer>
+        © 2026 Duryab Portfolio. Designed for a DevOps Engineer.
+      </footer>
+    </div>
+  </section>
+
+</body>
+</html>
