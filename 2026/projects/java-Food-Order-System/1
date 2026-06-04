@@ -1,0 +1,12 @@
+FROM  circleci/java:8-jdk
+
+WORKDIR /app
+COPY . /app
+
+RUN sudo apt-get update && sudo apt-get  install ant > /dev/null 
+
+WORKDIR /app/Food-Order-System/food_order
+
+RUN ant clean jar
+
+CMD ["java","-jar","dist/anagrams.jar"]
