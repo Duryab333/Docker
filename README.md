@@ -109,6 +109,7 @@ docker push yourdockerhub/my-first-image
 Docker uses a layered caching mechanism to speed up builds by reusing unchanged instructions from previous builds. Each instruction in a Dockerfile creates a layer, and Docker checks whether it can reuse existing layers to avoid redundant work.
 
 Key Concepts
+
 ✅ **Layered Builds** – Each instruction forms a layer, improving efficiency.
 
 ✅ **Cache Reuse** – Unchanged layers are reused, reducing build time. 
