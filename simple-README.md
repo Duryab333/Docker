@@ -6,8 +6,9 @@ which needed differnt version of dependencies or packages.So to run anything on 
 It is a containerization tool which allows you to rull/ create images to run containers.
 Docker pakages applicaion code, dependicies, runtime & configuraion into a container that can run same everywhere.
 
-**Docker Client** : Its Docker CLI, use to talk Docker Demon
-**Docker Demon**: also called (Docker Engine). Its a background-service that builds images, runing containers, and managing them behind the scenes. 
+**Docker Engin**  : Its the complete system, it contains Docker Demon, Docker Client.
+**Docker Client** : Its Docker CLI, use to talk Docker Demon.
+**Docker Demon**  : Its a background-service that builds images, runing containers, and managing them behind the scenes. 
 
 
 ## How to use Docker?
