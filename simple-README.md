@@ -7,7 +7,9 @@ It is a containerization tool which allows you to rull/ create images to run con
 Docker pakages applicaion code, dependicies, runtime & configuraion into a container that can run same everywhere.
 
 **Docker Engin**  : Its the complete system, it contains Docker Demon, Docker Client.
+
 **Docker Client** : Its Docker CLI, use to talk Docker Demon.
+
 **Docker Demon**  : Its a background-service that builds images, runing containers, and managing them behind the scenes. 
 
 
