@@ -1,0 +1,34 @@
+# I will take the base image only for the required task
+FROM python:3.14-slim AS builder
+
+WORKDIR  /app
+
+COPY requirements.txt .
+
+# after installation this requiment becomes a package so we are storing that to libraries directory
+RUN pip install -r requirements.txt --target /app/libraries
+
+
+# python3.14 work is done here. jo is se chaheye to /app/libraries me rakha hoa hy to hum next use krna ho ga to /app/libraries se ly len gy 
+# ab distroless image use kren gy
+
+COPY . .
+
+# take a another base image with even lesser size (minimal)
+
+FROM gcr.io/distroless/python3-debian13 AS deployer
+
+WORKDIR /app
+
+COPY   --from=builder /app/libraries /app/libraries
+
+COPY --from=builder /app .
+
+EXPOSE 80
+
+ENV PYTHONPATH="/app/libraries"
+
+
+CMD ["run.py"]
+
+
