@@ -21,6 +21,12 @@ Docker pakages applicaion code, dependicies, runtime & configuraion into a conta
   sudo usermod -aG $USER
   newgrp docker
   docker ps
+  docker ps -a # Shows all the containers even not runing
+  docker system prune # remove all the stoped contianers, networks, dangling images & build cache
+  docker rm <container-id>
+  docker images
+  docker rmi <image-id>
+  
   ```
 **Example 1 (UBUNTU)**
 - To run an ubuntu container: ` docker run -itd ubuntu `
