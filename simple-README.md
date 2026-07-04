@@ -32,7 +32,11 @@ Docker pakages applicaion code, dependicies, runtime & configuraion into a conta
   docker stop <container-id>
   docker start <container-id>
   docker rm <container-id>
+  docker images
   ```
+
+  if any Image have it child image so ` docker rm <container-id>` wouldn't work.  `docker system prune` it will all the stoped container, the unused network and the images that are damgling images (whoes inheriting other images but no contianer is runing on them ) and build cashes.
+
 **Example 1 (UBUNTU)**
 - To run an ubuntu container: ` docker run -itd ubuntu ` or  ` docker run -it ubuntu bash`
 - To go instide of that container: ``docker exec -it <container-id> bash`
