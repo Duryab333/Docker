@@ -61,7 +61,7 @@ Docker pakages applicaion code, dependicies, runtime & configuraion into a conta
   docker volume create <volume-name>
   docker volume inspect <volume-name> # to see deails about volume,  where volume is created etc.
   ```
-  Example of attaching volume at container run-time:
+  Example of attaching volume at container run-time:(know at which location container stores the data and map that with volume)
 
   ```
   docker run -d  -v mysql_data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql
@@ -130,8 +130,9 @@ Everything is build in layers.(it pull or build layers when we run Docker file.
  Docker volume ls
  Docker volume inspect <volume-name> # to check location of volume in Host
  ```
-  Before mapping find out that where is the data store in container-name container path. e.g. for mysql its /var/lib/mysql
-  Now map the host volume to data-store location of container at the time of creation e.g. `docker run -d mysql -v <volume-name>:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin mysql .`
+ Before mapping find out that where is the data store in container-name container path. e.g. for mysql its /var/lib/mysql
+ Now map the host volume to data-store location of container at the time of creation e.g. `docker run -d mysql -v <volume-name>:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin mysql .`
+ Another example of nginx: `docker run -it -v /home/<host-path>:/app -p 83:80 <image-name> /bin/sh`
 Now if the container crashed/rmoved and make new container it will still have the data stored on host.
 Now data is Persist
 another stratergy is instread of creating new volum you can just make a directory and use it as volume with -v e.g.  `docker run -d -v </home/ubuntu/project/data>:/app/data e MYSQL_ROOT_PASSWORD=admin mysql .`
