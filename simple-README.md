@@ -67,6 +67,12 @@ Docker pakages applicaion code, dependicies, runtime & configuraion into a conta
   docker run -d  -v mysql_data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql
 
   ```
+- Network
+  ```
+  docker network ls
+  docker network create <network-name>
+  docker network inspect <network-name>
+  ```
 
   if any Image have it child image so ` docker rm <container-id>` wouldn't work.  `docker system prune` it will all the stoped container, the unused network and the images that are damgling images (whoes inheriting other images but no contianer is runing on them ) and build cashes.
 
