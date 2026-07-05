@@ -27,20 +27,46 @@ Docker pakages applicaion code, dependicies, runtime & configuraion into a conta
   sudo apt-get install docker.io
   sudo usermod -aG $USER
   newgrp docker
-  docker ps
+  ```
+- Containers:
 
+  ```
+  docker ps
   docker ps -a # Shows all the containers even not runing
-  docker system prune # remove all the stoped contianers, networks, dangling images & build cache
   docker rm <container-id>
-  docker images
-  docker rmi <image-id>
-  docker logs <container-id>
+
   docker stop <container-id>
   docker start <container-id>
-  docker rm <container-id>
+  
+  docker system prune # remove all the stoped contianers, networks, dangling images & build cache 
+  ```
+  
+- Images:
+  ```
+  
+  docker images
+  docker rmi <image-id>
+  ```
+- Container Inspect: 
+  ```
+  
+  docker logs <container-id>
+  docker exect -it  <container-id> bash # to go instide container
   docker images
 
-```
+  ```
+- Volume:
+  ```
+  docker volume ls
+  docker volume create <volume-name>
+  docker volume inspect <volume-name> # to see deails about volume,  where volume is created etc.
+  ```
+  Example of attaching volume at container run-time:
+
+  ```
+  docker run -d  -v mysql_data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql
+
+  ```
 
   if any Image have it child image so ` docker rm <container-id>` wouldn't work.  `docker system prune` it will all the stoped container, the unused network and the images that are damgling images (whoes inheriting other images but no contianer is runing on them ) and build cashes.
 
@@ -55,7 +81,7 @@ Docker pakages applicaion code, dependicies, runtime & configuraion into a conta
 **Example 3 (MYSQL)**
 - To run an mysql container: ` docker run -d --name mysql-demo -e MYSQL_ROOT_PASSWORD=admin mysql  `
 - To go instide of that container: ``docker exec -it <container-id> bash`
--  `mysql -u root -p`
+- `mysql -u root -p`
 - mysql> `show databases;`
 - mysql> `use <database-name>;`
 - mysql> `show tables;`
