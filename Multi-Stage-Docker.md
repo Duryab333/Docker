@@ -1,7 +1,7 @@
 ## Multi-Stage Docker Builds for Java Applications
 
 Multi-stage builds help create **optimized and secure Docker images** by separating the build environment from the runtime environment.
-
+         
 ### **How It Works**
 1️⃣ **Builder Stage** – Uses a **Java Development Kit (JDK)** to compile and package the application.
 2️⃣ **Final Stage** – Uses a **lighter Java Runtime Environment (JRE)** to run the application efficiently.
