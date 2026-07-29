@@ -1,6 +1,6 @@
 <?php
 
-
+     
 class House {
     // color of the house
     private $color;
